@@ -38,6 +38,10 @@ namespace HdmiKeepAlive
             {
                 _player.Play();
             }
+            catch (Exception ex)
+            {
+                _notifyIcon.ShowBalloonTip(5000, "Error", ex.Message, ToolTipIcon.Error);
+            }
             finally
             {
                 _timer.Enabled = true;
@@ -65,10 +69,10 @@ namespace HdmiKeepAlive
             {
                 using (var writer = new BinaryWriter(stream))
                 {
-                    writer.Write(0x46464952); // RIFF
+                    writer.Write(0x46464952); // "RIFF"
                     writer.Write(numBytes + 36);
-                    writer.Write(0x45564157); // WAVE
-                    writer.Write(0x20746d66); // fmt 
+                    writer.Write(0x45564157); // "WAVE"
+                    writer.Write(0x20746d66); // "fmt "
                     writer.Write(16); // size of PCM = 16
                     writer.Write((short)1); // AudioFormat
                     writer.Write(channels); // NumChannels
@@ -76,7 +80,7 @@ namespace HdmiKeepAlive
                     writer.Write(sampleRate * channels * bytesPerSample); // byte rate
                     writer.Write((short)(channels * bytesPerSample)); // block align
                     writer.Write(bitsPerSample); // bps
-                    writer.Write(0x61746164); // data
+                    writer.Write(0x61746164); // "data"
                     writer.Write(numBytes); // byte rate
                     writer.Write(new byte[numBytes]);
                 }
