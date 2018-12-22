@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("HdmiKeepAlive")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("HDMI Keep-Alive")]
+[assembly: AssemblyDescription("A simple system tray application that plays 2 seconds of silence every 5 seconds to keep digital audio connections alive")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("SPARQ Solutions")]
-[assembly: AssemblyProduct("HdmiKeepAlive")]
-[assembly: AssemblyCopyright("Copyright © SPARQ Solutions 2018")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("HDMI Keep-Alive")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
